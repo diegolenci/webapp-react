@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import ReviewCard from "../components/ReviewCard"
 
 export default function MoviePage(){
 
@@ -16,9 +17,23 @@ export default function MoviePage(){
 
     useEffect(fetchMovie, [id])
     
+    const renderReviews = () => {
+        return(
+            movie.reviews?.map( (review) => {
+                return(
+                    <ReviewCard key={review.id} review={review}/>
+                )
+            })
+        )
+    }
+
     return(
         <>
             <h1>{movie.title}</h1>
+            <section>
+                <h4>Reviews:</h4>
+                {renderReviews()}
+            </section>
         </>
     )
 }
