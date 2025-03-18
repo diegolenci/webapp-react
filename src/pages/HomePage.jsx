@@ -1,4 +1,4 @@
-import BookCard from "../components/BookCard";
+import MovieCard from "../components/MovieCard";
 import ReviewCard from "../components/ReviewCard"
 
 export default function HomePage(){
@@ -6,7 +6,7 @@ export default function HomePage(){
         <>
              <h1 className="text-primary">Movie</h1>
              <div className="row row-cols-3">
-                <BookCard/>
+                <MovieCard/>
                 <ReviewCard/>
              </div>
         </>
