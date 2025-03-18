@@ -7,6 +7,7 @@ export default function MovieCard({movie}){
     return(
         <>
             <div className="card mb-4">
+                <img src={image} alt={title}/>
                 <div className="card-body">
                     <h3 className="card-title">{title}</h3>
                     <h5>
