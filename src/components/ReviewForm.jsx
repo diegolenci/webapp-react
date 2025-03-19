@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 
-export default function ReviewForm(){
+export default function ReviewForm({movie_id, reloadReviews}){
 
     //endpoint
     const endpoint = `http://localhost:3000/movies/${movie_id}/reviews`
@@ -25,6 +25,7 @@ export default function ReviewForm(){
         })
         .then(() => {
             setFormData(initialValue);
+            reloadReviews()
         })
         .catch((err) => console.log(err))
     };

@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import ReviewCard from "../components/ReviewCard"
+import ReviewForm from "../components/ReviewForm"
 
 export default function MoviePage(){
 
@@ -33,6 +34,10 @@ export default function MoviePage(){
             <section>
                 <h4>Reviews:</h4>
                 {renderReviews()}
+            </section>
+            
+            <section>
+                {movie?.id && <ReviewForm movie_id={movie.id} reloadReviews={fetchMovie}/> }
             </section>
         </>
     )
